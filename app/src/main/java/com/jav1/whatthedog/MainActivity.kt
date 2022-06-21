@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
         configureMapWithDefaultParameters(map, rotation)
 
         //Create a marker to the default location
-        val marker = MarkerCreatorOverlay(startPoint)
+        val marker = MarkerCreatorOverlay(startPoint, textView)
         map.overlays.add(marker)
         MarkerManager.addMarker(map, startPoint, startTitle, startDescription)
 
