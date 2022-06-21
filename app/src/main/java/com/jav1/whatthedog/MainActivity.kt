@@ -24,6 +24,8 @@ private lateinit var rotation : RotationGestureOverlay
 private var latitude : Double = 46.82292
 private var longitude : Double = 6.50133
 private var startPoint : GeoPoint = GeoPoint(latitude, longitude)
+private var startTitle : String = "Mr. Viret's position"
+private var startDescription : String = "This is the start point where the calculation will start"
 private var permissions = arrayOf(
     WRITE_EXTERNAL_STORAGE,
     ACCESS_COARSE_LOCATION,
@@ -62,6 +64,11 @@ class MainActivity : AppCompatActivity() {
         rotation = RotationGestureOverlay(map)
 
         configureMapWithDefaultParameters(map, rotation)
+
+        //Create a marker to the default location
+        val marker = MarkerCreatorOverlay(startPoint)
+        map.overlays.add(marker)
+        MarkerManager.addMarker(map, startPoint, startTitle, startDescription)
     }
 
     /**
