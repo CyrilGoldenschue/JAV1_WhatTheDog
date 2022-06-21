@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">What The Dog</string>
-    <string name="distance">Distance</string>
+    <string name="distance">Distance : \nPrice :</string>
 </resources>
