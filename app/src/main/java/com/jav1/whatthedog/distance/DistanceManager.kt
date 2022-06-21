@@ -21,15 +21,22 @@ class DistanceManager {
          * @param {GeoPoint} endPoint the second point
          * @return the distance in meters
          */
-        fun getDistance(point1: GeoPoint, point2: GeoPoint): Double {
-            return point1.distanceToAsDouble(point2)
+        private fun getDistance(point1: GeoPoint, point2: GeoPoint): Double {
+            return roundTo(point1.distanceToAsDouble(point2))
         }
 
         /**
          * This function is used to calculate the price between two points
          */
-        fun getPrice(point1: GeoPoint, point2: GeoPoint): Double {
-            return getDistance(point1, point2) * PRICE_PER_KM
+        private fun getPrice(point1: GeoPoint, point2: GeoPoint): Double {
+            return roundTo(getDistance(point1, point2) * PRICE_PER_KM)
+        }
+
+        /**
+         * Round a double to a certain number of decimal places
+         */
+        private fun roundTo(value: Double): Double {
+            return (value * 100.0).roundToInt() / 100.0
         }
     }
 }
