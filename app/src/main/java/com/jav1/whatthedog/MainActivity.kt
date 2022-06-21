@@ -1,9 +1,19 @@
 package com.jav1.whatthedog
 
+import android.Manifest.permission.*
+import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 
-
+private var permissions = arrayOf(
+    WRITE_EXTERNAL_STORAGE,
+    ACCESS_COARSE_LOCATION,
+    ACCESS_NETWORK_STATE,
+    ACCESS_WIFI_STATE,
+    INTERNET
+)
 
 /**
  * Main activity for the app.
