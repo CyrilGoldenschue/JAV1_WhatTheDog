@@ -23,10 +23,10 @@ class DistanceManager {
         fun getInfos(point1: GeoPoint, point2: GeoPoint): String {
             return if (getDistance(point1, point2) >= KILOMETER_IN_METER) {
                 "Distance : ${roundTo(getDistance(point1, point2) / KILOMETER_IN_METER)} km\n" +
-                        "Price : ${getPrice(point1,point2)}"
+                        "Price : ${getPrice(point1,point2)} CHF"
             } else {
                 "Distance : ${getDistance(point1, point2)} m\n" +
-                        "Price : ${getPrice(point1,point2)}"
+                        "Price : ${getPrice(point1,point2)} CHF"
             }
         }
 
