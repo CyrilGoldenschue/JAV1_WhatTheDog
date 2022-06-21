@@ -27,5 +27,18 @@ class MarkerManager {
             marker.snippet = snippet
             mapView.overlays.add(marker)
         }
+
+        /**
+         * Updates the marker on a specific GeoPoint.
+         * @param {GeoPoint} point The GeoPoint to update the marker on.
+         * @param {MapView} mapView The MapView to update the marker on.
+         */
+        fun updateMarker(mapView: MapView, startPoint: GeoPoint, endPoint: GeoPoint) {
+            val marker = mapView.overlays.firstOrNull { it is Marker && it.position != startPoint } as Marker?
+            if (marker != null) {
+                marker.position = endPoint
+            }
+        }
+
     }
 }
