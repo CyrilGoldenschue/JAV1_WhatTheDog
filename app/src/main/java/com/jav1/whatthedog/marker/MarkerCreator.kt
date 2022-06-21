@@ -10,7 +10,7 @@ import org.osmdroid.views.overlay.Overlay
 /**
  * Created by Mathieu RABOT
  * 21.06.2022
- * This class is used handle the events on the map that use markers
+ * This class is used to handle the events on the map that use markers
  * using the GeoPoint class, the Overlay class and the MapView class from OSMdroid
  * For the project what-the-dog JAV1
  */
@@ -36,6 +36,7 @@ class MarkerCreatorOverlay(private val startPoint: GeoPoint) : Overlay() {
             MarkerManager.addMarker(mapView, endPoint, title, snippet)
             PolylineManager.addPolyline(mapView, startPoint, endPoint)
         }
+            DistanceManager.getDistance(startPoint, endPoint)
         return true
     }
 }
