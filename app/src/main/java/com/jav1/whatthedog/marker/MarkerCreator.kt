@@ -37,7 +37,7 @@ class MarkerCreatorOverlay(private val startPoint: GeoPoint, private val textVie
             MarkerManager.addMarker(mapView, endPoint, title, snippet)
             PolylineManager.addPolyline(mapView, startPoint, endPoint)
         }
-            DistanceManager.getDistance(startPoint, endPoint)
+            textView.text = DistanceManager.getInfos(startPoint, endPoint)
         return true
     }
 }
