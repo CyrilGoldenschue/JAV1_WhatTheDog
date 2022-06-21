@@ -27,6 +27,19 @@ class PolylineManager {
         }
 
         /**
+         * This function is used to update the current line on the map
+         * @param {MapView} mapView the mapView where the line will be updated
+         */
+        fun updatePolyline(mapView: MapView, start: GeoPoint, end: GeoPoint) {
+            val polyline = Polyline()
+            polyline.addPoint(start)
+            polyline.addPoint(end)
+            mapView.overlays.remove(getPolyline(mapView))
+            mapView.overlays.add(polyline)
+            mapView.invalidate()
+        }
+
+        /**
          * Get current polyline on the map
          * @param {MapView} mapView the mapView where the line is
          * @return {Polyline} the current polyline on the map
