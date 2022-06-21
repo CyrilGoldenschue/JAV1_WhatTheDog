@@ -1,4 +1,4 @@
-package com.jav1.whatthedog
+package com.jav1.whatthedog.marker
 
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView

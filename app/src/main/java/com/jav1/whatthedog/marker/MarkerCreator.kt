@@ -1,4 +1,4 @@
-package com.jav1.whatthedog
+package com.jav1.whatthedog.marker
 
 import android.view.MotionEvent
 import org.osmdroid.util.GeoPoint
@@ -32,6 +32,8 @@ class MarkerCreatorOverlay(private val startPoint: GeoPoint) : Overlay() {
         } else {
             MarkerManager.addMarker(mapView, endPoint, title, snippet)
         }
+
+
         return true
     }
 }
