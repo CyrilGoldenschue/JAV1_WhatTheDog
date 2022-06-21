@@ -14,4 +14,24 @@ import org.osmdroid.views.overlay.Overlay
  */
 class MarkerCreatorOverlay(private val startPoint: GeoPoint) : Overlay() {
 
+    /**
+     * Handle the long press event on the map that deal with the creation of a marker
+     * @param {MapView} mapView the mapView that is used to display the map
+     * @param {MotionEvent} e the event that is triggered
+     * @return {Boolean} true if the event is handled
+     */
+    override fun onLongPress(e: MotionEvent?, mapView: MapView?): Boolean{
+        val title = "My chosen location"
+        val snippet = "This is where I am"
+        val endPoint = mapView!!.projection.fromPixels(
+            e!!.x.toInt(),
+            e.y.toInt(), null
+        ) as GeoPoint
+        if (MarkerManager.hasMarker(mapView, startPoint)) {
+            MarkerManager.updateMarker(mapView, startPoint, endPoint)
+        } else {
+            MarkerManager.addMarker(mapView, endPoint, title, snippet)
+        }
+        return true
+    }
 }
