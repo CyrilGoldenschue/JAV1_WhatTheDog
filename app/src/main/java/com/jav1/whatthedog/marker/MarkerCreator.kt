@@ -1,6 +1,7 @@
 package com.jav1.whatthedog.marker
 
 import android.view.MotionEvent
+import com.jav1.whatthedog.polyline.PolylineManager
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.Overlay
@@ -20,7 +21,7 @@ class MarkerCreatorOverlay(private val startPoint: GeoPoint) : Overlay() {
      * @param {MotionEvent} e the event that is triggered
      * @return {Boolean} true if the event is handled
      */
-    override fun onLongPress(e: MotionEvent?, mapView: MapView?): Boolean{
+    override fun onLongPress(e: MotionEvent?, mapView: MapView?): Boolean {
         val title = "My chosen location"
         val snippet = "This is where I am"
         val endPoint = mapView!!.projection.fromPixels(
@@ -29,11 +30,11 @@ class MarkerCreatorOverlay(private val startPoint: GeoPoint) : Overlay() {
         ) as GeoPoint
         if (MarkerManager.hasMarker(mapView, startPoint)) {
             MarkerManager.updateMarker(mapView, startPoint, endPoint)
+            PolylineManager.updatePolyline(mapView, startPoint, endPoint)
         } else {
             MarkerManager.addMarker(mapView, endPoint, title, snippet)
+            PolylineManager.addPolyline(mapView, startPoint, endPoint)
         }
-
-
         return true
     }
 }
