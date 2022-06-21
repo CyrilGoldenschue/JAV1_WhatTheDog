@@ -6,6 +6,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.preference.PreferenceManager
+import org.osmdroid.config.Configuration
 import org.osmdroid.views.MapView
 
 private lateinit var map : MapView
@@ -25,7 +27,6 @@ private var permissions = arrayOf(
  * By adding a map to an application by using the Osmdroid library
  */
 class MainActivity : AppCompatActivity() {
-    
     /**
      * Called when the activity is first created.
      */
@@ -36,6 +37,9 @@ class MainActivity : AppCompatActivity() {
         //Request permissions if not granted
         requestPermissionsIfNecessary(permissions)
 
+        //Inflate and create the map
+        val context = this.applicationContext
+        Configuration.getInstance().load(context, PreferenceManager.getDefaultSharedPreferences(context))
     }
 
     /**
