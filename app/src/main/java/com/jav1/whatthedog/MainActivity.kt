@@ -23,7 +23,6 @@ import org.osmdroid.views.overlay.compass.CompassOverlay
 import org.osmdroid.views.overlay.gestures.RotationGestureOverlay
 
 private lateinit var map : MapView
-private lateinit var textView : TextView
 private lateinit var rotation : RotationGestureOverlay
 //Default Sainte-croix location
 private var latitude : Double = 46.82292
@@ -63,7 +62,7 @@ class MainActivity : AppCompatActivity() {
 
         //Capture components from the layout
         map = findViewById(R.id.map)
-        textView = findViewById(R.id.text)
+        val textView : TextView = findViewById(R.id.text)
 
         //Set the map view
         rotation = RotationGestureOverlay(map)
