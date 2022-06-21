@@ -15,6 +15,7 @@ import org.osmdroid.tileprovider.tilesource.TileSourceFactory
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.CustomZoomButtonsController
 import org.osmdroid.views.MapView
+import org.osmdroid.views.overlay.compass.CompassOverlay
 import org.osmdroid.views.overlay.gestures.RotationGestureOverlay
 
 private lateinit var map : MapView
@@ -69,6 +70,10 @@ class MainActivity : AppCompatActivity() {
         val marker = MarkerCreatorOverlay(startPoint)
         map.overlays.add(marker)
         MarkerManager.addMarker(map, startPoint, startTitle, startDescription)
+
+        //Add compass on the map
+        val compass: CompassOverlay = CompassOverlay(this, map)
+        compass.enableCompass()
     }
 
     /**
