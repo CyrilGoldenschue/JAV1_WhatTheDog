@@ -117,6 +117,38 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
+     * Define map listeners
+     * @param {Context} context used
+     * @param {TextView} textView used
+     */
+    private fun configureMapListeners(context: Context, textView: TextView) {
+        map.addMapListener(object : MapListener {
+            override fun onScroll(event: ScrollEvent): Boolean {
+                updateInfo(context, textView)
+                return true
+            }
+
+            override fun onZoom(event: ZoomEvent): Boolean {
+                updateInfo(context, textView)
+                return true
+            }
+        })
+    }
+
+    /**
+     * update coordinates and zoom level
+     * @param {Context} context used
+     * @param {TextView} textView used
+     */
+    private fun updateInfo(context: Context, textView: TextView) {
+        val center = map.mapCenter
+        latitude = center.latitude
+        longitude = center.longitude
+        val textTest = context.resources.getString(R.string.distance) + "Latitude : $latitude\n Longitude : $longitude"
+        textView.text = textTest
+    }
+
+    /**
      * Check if the app has permission to access fine location
      * @return true if the app has permission to access fine location
      * @param {Array<String>} permissions The permissions to check.
