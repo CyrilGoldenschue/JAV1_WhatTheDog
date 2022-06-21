@@ -1,3 +1,47 @@
 <resources>
     <string name="app_name">What The Dog</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+
+
+    <string name="title_services">Services</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_home_customer">Home_C</string>
+    <string name="menu_home_admin">Home_A</string>
+    <string name="menu_service_customer">Service</string>
+    <string name="menu_service_admin">Service_A</string>
+    <string name="menu_test">Test</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+
+
+    <string name="button_reserved">Réserver</string>
+    <string name="client1">Mathieu Rabot</string>
+    <string name="clientListTitle">Liste des clients :</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="clientListLabel">Liste des clients :</string>
+    <string name="client2">Cyril Goldenshue</string>
+    <string name="client3">Hélène Dubuis</string>
+    <string name="client4">Armand Marechal</string>
+    <string name="client5">Yannick Baudraz</string>
+    <string name="firstName">Prénom</string>
+    <string name="address">Adresse</string>
+    <string name="name">Nom</string>
+    <string name="mail">Mail</string>
+    <string name="phone">Téléphone</string>
+    <string name="city">Ville</string>
+    <string name="npa">NPA</string>
+    <string name="signUp">S\'inscrire</string>
+    <string name="rabais">Rabais</string>
+    <string name="cr_ation">Création</string>
+
 </resources>
