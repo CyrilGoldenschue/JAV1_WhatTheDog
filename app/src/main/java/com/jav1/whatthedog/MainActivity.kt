@@ -30,5 +30,54 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //Request permissions if not granted
+        requestPermissionsIfNecessary(permissions)
+
     }
+
+    /**
+     * Check if the app has permission to access fine location
+     * @return true if the app has permission to access fine location
+     * @param {Array<String>} permissions The permissions to check.
+     * @param {Int} requestCode The request code for the permission.
+     * @param {Int} grantResults The grant results for the permission.
+     */
+    private fun onRequestPermissionResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
+        val permissionsToRequest: ArrayList<String> = ArrayList()
+        for (i in grantResults.indices) {
+            permissionsToRequest.add(permissions[i])
+        }
+        if (permissionsToRequest.size > 0) {
+            ActivityCompat.requestPermissions(
+                this,
+                permissionsToRequest.toTypedArray(),
+                requestCode
+            )
+        }
+    }
+
+    /**
+     * Check if the app has permission to access fine location
+     * @param {Array<String>} permissions The permissions to check.
+     */
+    private fun requestPermissionsIfNecessary(permissions: Array<String>) {
+        val permissionsToRequest: ArrayList<String> = ArrayList()
+        for (permission in permissions) {
+            if (ContextCompat.checkSelfPermission(
+                    this,
+                    permission
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
+                permissionsToRequest.add(permission)
+            }
+        }
+        if (permissionsToRequest.size > 0) {
+            ActivityCompat.requestPermissions(this, permissionsToRequest.toTypedArray(), 0)
+        }
+    }
+
 }
