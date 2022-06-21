@@ -1,6 +1,7 @@
 package com.jav1.whatthedog.marker
 
 import android.view.MotionEvent
+import com.jav1.whatthedog.distance.DistanceManager
 import com.jav1.whatthedog.polyline.PolylineManager
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
