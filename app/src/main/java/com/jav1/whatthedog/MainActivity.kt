@@ -6,7 +6,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import org.osmdroid.views.MapView
 
+private lateinit var map : MapView
 private var permissions = arrayOf(
     WRITE_EXTERNAL_STORAGE,
     ACCESS_COARSE_LOCATION,
@@ -23,6 +25,7 @@ private var permissions = arrayOf(
  * By adding a map to an application by using the Osmdroid library
  */
 class MainActivity : AppCompatActivity() {
+    
     /**
      * Called when the activity is first created.
      */
@@ -33,6 +36,22 @@ class MainActivity : AppCompatActivity() {
         //Request permissions if not granted
         requestPermissionsIfNecessary(permissions)
 
+    }
+
+    /**
+     * Resumes the map.
+     */
+    override fun onResume() {
+        super.onResume()
+        map.onResume()
+    }
+
+    /**
+     * Pauses the map.
+     */
+    override fun onPause() {
+        super.onPause()
+        map.onPause()
     }
 
     /**
