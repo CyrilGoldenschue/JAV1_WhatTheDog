@@ -1,5 +1,9 @@
 package com.jav1.whatthedog.polyline
 
+import org.osmdroid.util.GeoPoint
+import org.osmdroid.views.MapView
+import org.osmdroid.views.overlay.Polyline
+
 /**
  * Created by Mathieu RABOT
  * 21.06.2022
