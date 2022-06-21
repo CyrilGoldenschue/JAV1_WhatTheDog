@@ -1,6 +1,7 @@
 package com.jav1.whatthedog
 
 import android.Manifest.permission.*
+import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.widget.TextView
@@ -11,6 +12,9 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.preference.PreferenceManager
 import org.osmdroid.config.Configuration
+import org.osmdroid.events.MapListener
+import org.osmdroid.events.ScrollEvent
+import org.osmdroid.events.ZoomEvent
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.CustomZoomButtonsController
