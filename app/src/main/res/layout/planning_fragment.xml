@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Planning"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_shadow_end_color"
+    tools:context=".planning.planning">
+
+    <ImageButton
+        android:id="@+id/select_date_end"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/cardview_shadow_end_color"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:src="@drawable/baseline_edit_calendar_24"
+        app:layout_constraintStart_toEndOf="@+id/date_begin"
+        app:layout_constraintTop_toBottomOf="@+id/select_date_begin"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/date_begin"
+        android:layout_width="213dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="88dp"
+        style="@style/text"
+        android:hint="Date de début"
+        android:textAlignment="inherit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dispo_title" />
+
+    <ImageButton
+        android:id="@+id/select_date_begin"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="88dp"
+        android:background="@color/cardview_shadow_end_color"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:src="@drawable/baseline_edit_calendar_24"
+        app:layout_constraintStart_toEndOf="@+id/date_begin"
+        app:layout_constraintTop_toBottomOf="@+id/dispo_title"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/date_end"
+        android:layout_width="211dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="28dp"
+        style="@style/text"
+        android:hint="Date de fin"
+        android:textAlignment="inherit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date_begin"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="355dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="172dp"
+        android:layout_marginEnd="24dp"
+        android:entries="@array/canevas_select"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/select_date_end" />
+
+    <TextView
+        android:id="@+id/dispo_title"
+        style="@style/title"
+        android:layout_width="206dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="24dp"
+        android:text="Disponibilité"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
