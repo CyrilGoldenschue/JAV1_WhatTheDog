@@ -3,6 +3,9 @@ package com.jav1.whatthedog
 import android.Manifest.permission.*
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.widget.TextView
+
+
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -11,6 +14,7 @@ import org.osmdroid.config.Configuration
 import org.osmdroid.views.MapView
 
 private lateinit var map : MapView
+private lateinit var textView : TextView
 private var permissions = arrayOf(
     WRITE_EXTERNAL_STORAGE,
     ACCESS_COARSE_LOCATION,
@@ -40,6 +44,10 @@ class MainActivity : AppCompatActivity() {
         //Inflate and create the map
         val context = this.applicationContext
         Configuration.getInstance().load(context, PreferenceManager.getDefaultSharedPreferences(context))
+
+        //Capture components from the layout
+        map = findViewById(R.id.map)
+        textView = findViewById(R.id.text)
     }
 
     /**
