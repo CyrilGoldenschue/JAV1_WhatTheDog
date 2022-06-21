@@ -1,6 +1,7 @@
 package com.jav1.whatthedog.marker
 
 import android.view.MotionEvent
+import android.widget.TextView
 import com.jav1.whatthedog.distance.DistanceManager
 import com.jav1.whatthedog.polyline.PolylineManager
 import org.osmdroid.util.GeoPoint
@@ -14,7 +15,7 @@ import org.osmdroid.views.overlay.Overlay
  * using the GeoPoint class, the Overlay class and the MapView class from OSMdroid
  * For the project what-the-dog JAV1
  */
-class MarkerCreatorOverlay(private val startPoint: GeoPoint) : Overlay() {
+class MarkerCreatorOverlay(private val startPoint: GeoPoint, private val textView: TextView) : Overlay() {
 
     /**
      * Handle the long press event on the map that deal with the creation of a marker
