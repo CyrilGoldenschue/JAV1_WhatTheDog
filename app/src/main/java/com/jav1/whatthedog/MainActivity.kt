@@ -78,6 +78,9 @@ class MainActivity : AppCompatActivity() {
         //Add compass on the map
         val compass: CompassOverlay = CompassOverlay(this, map)
         compass.enableCompass()
+
+        //Add a listener to the map
+        configureMapListeners(context,textView)
     }
 
     /**
