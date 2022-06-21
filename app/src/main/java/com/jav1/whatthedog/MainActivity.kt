@@ -67,6 +67,26 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
+     * Map configuration
+     * @param {Mapview} map used
+     * @param {RotationGestureOverlay} rotation used
+     */
+    private fun configureMapWithDefaultParameters(currentMap: MapView, currentRotation: RotationGestureOverlay) {
+        currentMap.setTileSource(TileSourceFactory.MAPNIK)
+
+        currentRotation.isEnabled = true
+
+        currentMap.zoomController.setVisibility(CustomZoomButtonsController.Visibility.ALWAYS)
+        currentMap.setMultiTouchControls(true)
+
+        currentMap.controller.setZoom(18.0)
+        currentMap.controller.setCenter(startPoint)
+
+        map = currentMap
+        rotation = currentRotation
+    }
+
+    /**
      * Check if the app has permission to access fine location
      * @return true if the app has permission to access fine location
      * @param {Array<String>} permissions The permissions to check.
