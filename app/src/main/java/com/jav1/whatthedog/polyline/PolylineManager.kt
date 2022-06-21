@@ -13,5 +13,17 @@ import org.osmdroid.views.overlay.Polyline
  */
 class PolylineManager {
     companion object {
+        /**
+         * This function is used to create a line on the map
+         * @param {MapView} mapView the mapView where the line will be created
+         * @param {List<GeoPoint>}points the list of points that will be used to create the line
+         */
+        fun addPolyline(mapView: MapView, start: GeoPoint, end: GeoPoint) {
+            val polyline = Polyline()
+            polyline.addPoint(start)
+            polyline.addPoint(end)
+            mapView.overlays.add(polyline)
+            mapView.invalidate()
+        }
     }
 }
