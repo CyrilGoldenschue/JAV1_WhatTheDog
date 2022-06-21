@@ -40,5 +40,14 @@ class MarkerManager {
             }
         }
 
+        /**
+         * Check if a marker exists on a specific GeoPoint.
+         * @param {GeoPoint} point The only geo point to not check for.
+         * @param {MapView} mapView The MapView to check for the marker on.
+         * @return {Boolean} True if a marker exists on the GeoPoint, false otherwise.
+         */
+        fun hasMarker(mapView: MapView, startPoint: GeoPoint): Boolean {
+            return mapView.overlays.any { it is Marker && it.position != startPoint }
+        }
     }
 }
