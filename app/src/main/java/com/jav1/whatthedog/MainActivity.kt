@@ -81,6 +81,10 @@ class MainActivity : AppCompatActivity() {
 
         //Add a listener to the map
         configureMapListeners(context,textView)
+
+        //Add components to the map overlay
+        map.overlays.add(compass)
+        map.overlays.add(rotation)
     }
 
     /**
