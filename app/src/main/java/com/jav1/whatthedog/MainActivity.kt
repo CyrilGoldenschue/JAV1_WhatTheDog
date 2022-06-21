@@ -57,6 +57,11 @@ class MainActivity : AppCompatActivity() {
         //Capture components from the layout
         map = findViewById(R.id.map)
         textView = findViewById(R.id.text)
+
+        //Set the map view
+        rotation = RotationGestureOverlay(map)
+
+        configureMapWithDefaultParameters(map, rotation)
     }
 
     /**
