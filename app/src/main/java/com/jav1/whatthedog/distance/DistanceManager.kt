@@ -1,6 +1,7 @@
 package com.jav1.whatthedog.distance
 
 import org.osmdroid.util.GeoPoint
+import kotlin.math.roundToInt
 
 /**
  * Created by Mathieu RABOT
@@ -12,8 +13,22 @@ import org.osmdroid.util.GeoPoint
 class DistanceManager {
 
     companion object {
-        //Price per km
-        private const val PRICE_PER_KM = 0.1
+        //Price per kilometer
+        private const val PRICE_PER_KM = 0.05
+        private const val KILOMETER_IN_METER = 1000.0
+
+        /**
+         * This function return the correct text format
+         */
+        fun getInfos(point1: GeoPoint, point2: GeoPoint): String {
+            return if (getDistance(point1, point2) >= KILOMETER_IN_METER) {
+                "Distance : ${roundTo(getDistance(point1, point2) / KILOMETER_IN_METER)} km\n" +
+                        "Price : ${getPrice(point1,point2)}"
+            } else {
+                "Distance : ${getDistance(point1, point2)} m\n" +
+                        "Price : ${getPrice(point1,point2)}"
+            }
+        }
 
         /**
          * This function is used to calculate the distance between two points
