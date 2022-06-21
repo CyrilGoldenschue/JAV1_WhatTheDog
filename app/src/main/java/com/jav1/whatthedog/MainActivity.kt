@@ -80,9 +80,6 @@ class MainActivity : AppCompatActivity() {
         val compass: CompassOverlay = CompassOverlay(this, map)
         compass.enableCompass()
 
-        //Add a listener to the map
-        configureMapListeners(context,textView)
-
         //Add components to the map overlay
         map.overlays.add(compass)
         map.overlays.add(rotation)
@@ -122,38 +119,6 @@ class MainActivity : AppCompatActivity() {
 
         map = currentMap
         rotation = currentRotation
-    }
-
-    /**
-     * Define map listeners
-     * @param {Context} context used
-     * @param {TextView} textView used
-     */
-    private fun configureMapListeners(context: Context, textView: TextView) {
-        map.addMapListener(object : MapListener {
-            override fun onScroll(event: ScrollEvent): Boolean {
-                updateInfo(context, textView)
-                return true
-            }
-
-            override fun onZoom(event: ZoomEvent): Boolean {
-                updateInfo(context, textView)
-                return true
-            }
-        })
-    }
-
-    /**
-     * update coordinates and zoom level
-     * @param {Context} context used
-     * @param {TextView} textView used
-     */
-    private fun updateInfo(context: Context, textView: TextView) {
-        val center = map.mapCenter
-        latitude = center.latitude
-        longitude = center.longitude
-        val textTest = context.resources.getString(R.string.distance) + "Latitude : $latitude\n Longitude : $longitude"
-        textView.text = textTest
     }
 
     /**
