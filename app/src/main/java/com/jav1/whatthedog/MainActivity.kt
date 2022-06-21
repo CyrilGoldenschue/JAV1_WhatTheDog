@@ -11,10 +11,19 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.preference.PreferenceManager
 import org.osmdroid.config.Configuration
+import org.osmdroid.tileprovider.tilesource.TileSourceFactory
+import org.osmdroid.util.GeoPoint
+import org.osmdroid.views.CustomZoomButtonsController
 import org.osmdroid.views.MapView
+import org.osmdroid.views.overlay.gestures.RotationGestureOverlay
 
 private lateinit var map : MapView
 private lateinit var textView : TextView
+private lateinit var rotation : RotationGestureOverlay
+//Default Sainte-croix location
+private var latitude : Double = 46.82292
+private var longitude : Double = 6.50133
+private var startPoint : GeoPoint = GeoPoint(latitude, longitude)
 private var permissions = arrayOf(
     WRITE_EXTERNAL_STORAGE,
     ACCESS_COARSE_LOCATION,
