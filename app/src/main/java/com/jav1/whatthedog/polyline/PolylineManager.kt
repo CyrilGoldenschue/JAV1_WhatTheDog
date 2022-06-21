@@ -25,5 +25,19 @@ class PolylineManager {
             mapView.overlays.add(polyline)
             mapView.invalidate()
         }
+
+        /**
+         * Get current polyline on the map
+         * @param {MapView} mapView the mapView where the line is
+         * @return {Polyline} the current polyline on the map
+         */
+        private fun getPolyline(mapView: MapView): Polyline {
+            for (overlay in mapView.overlays) {
+                if (overlay is Polyline) {
+                    return overlay
+                }
+            }
+            return Polyline()
+        }
     }
 }
