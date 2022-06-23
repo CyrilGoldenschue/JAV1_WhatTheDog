@@ -1,4 +1,4 @@
- # Documentation technique
+ #  What The Dog - Architecture
 
 ## Table des matières
 
@@ -17,7 +17,7 @@
 
 ## Introduction
 
-Dans cette partie nous allons étudier l'application de cette architecture dans notre projet.
+Dans cette partie nous allons étudier l'application de cette architecture dans ce projet.
 
 Le projet s'est limité aux opérations sur les clients et les chiens. IL s'agit d'une relation `one to many` où  un client peut avoir plusieurs chiens.
 
@@ -67,12 +67,12 @@ Ses classes sont annotées `@dao` et le projet en l'état comporte `ClientDao.kt
 
 Les query sont précédés des annotations `@Query`, `@Insert`, `@Update`, `@Delete` pour chaque opération CRUD associées.
 
-> Remarque, c'est aussi ici que l'on définit quel comportement notre application doit adopter selon certaines situations. Typiquement dans le cas d'une insertion l'on peut choisir comment gérer un conflit via  `onConflict = OnConflictStrategy.IGNORE|REPLACE|ABORT` etc..
+> Remarque, c'est aussi ici que l'on définit quel comportement l'application doit adopter selon certaines situations. Typiquement dans le cas d'une insertion l'on peut choisir comment gérer un conflit via  `onConflict = OnConflictStrategy.IGNORE|REPLACE|ABORT` etc..
 
-Pour faire le lien avec `@entity`, il a été nécessaire de donner en paramètre de ces méthodes notre `entitiy`.
+Pour faire le lien avec `@entity`, il a été nécessaire de donner en paramètre de ces méthodes notre entité.
 
 ### @Database
-Il s'agit du point d'accès principal d'accès aux données de notre application.
+Il s'agit du point d'accès principal d'accès aux données de l'application.
 Ce component est annoté `@Database` et il s'agit d'une classe `abstract`. Ce component se trouve dans `db/AppDatabase.kt`.
 `AppDatabase` est une extension de `RoomDatabase`.
 
