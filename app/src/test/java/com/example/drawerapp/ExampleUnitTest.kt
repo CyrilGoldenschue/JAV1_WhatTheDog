@@ -1,4 +1,4 @@
-package com.jav1.whatthedog
+package com.example.drawerapp
 
 import org.junit.Test
 
