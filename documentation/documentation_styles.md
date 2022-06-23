@@ -19,3 +19,10 @@ Directory: `src\main\res\`
 
 Si cela peut prendre un peu de temps à mettre en place, le bénéfice d'une telle organisation de répertoire se trouve dans la maintenabilité.
 Si le design de l'application est amené à changer, alors il suffira de modifier ces fichiers pour appliquer ces styles dans tous les `fragments` ou `activities`.
+
+## Sources
+
+- [Thèmes](https://developer.android.com/guide/topics/ui/look-and-feel/themes)
+- [Organizing your source files](https://guides.codepath.com/android/Organizing-your-Source-Files)
+- [Style et thèmes](https://developer.android.com/guide/topics/ui/look-and-feel/themes)
+- [Project folder structure](https://www.geeksforgeeks.org/android-project-folder-structure/)
